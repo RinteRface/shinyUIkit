@@ -1,6 +1,6 @@
 Package: shinyUIkit
 Type: Package
-Title: 'shiny' API for 'UIkit' Web Framework
+Title: 'shiny' API for the 'UIkit' Web Framework
 Version: 0.1.0
 Authors@R: c(
     person("David", "Granjon", email = "david.granjon@uzh.ch", role = c("aut", "cre"),

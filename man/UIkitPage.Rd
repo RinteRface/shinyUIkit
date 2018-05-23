@@ -4,12 +4,14 @@
 \alias{UIkitPage}
 \title{Create a UIkit page}
 \usage{
-UIkitPage(..., title = NULL)
+UIkitPage(..., title = NULL, rtl = FALSE)
 }
 \arguments{
 \item{...}{any element.}
 
 \item{title}{App title.}
+
+\item{rtl}{Rigth to left support. FALSE by default.}
 }
 \description{
 Build an UIkit Shiny app.

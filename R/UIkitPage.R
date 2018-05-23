@@ -4,6 +4,7 @@
 #'
 #' @param ... any element.
 #' @param title App title.
+#' @param rtl Rigth to left support. FALSE by default.
 #'
 #' @examples
 #' if(interactive()){
@@ -27,28 +28,24 @@
 #' 
 #' @author David Granjon, \email{dgranjon@@gmail.com}
 #'
-#' @rdname page
 #' @export
-UIkitPage <- function(..., title = NULL){
+UIkitPage <- function(..., title = NULL, rtl = FALSE){
   
   shiny::tagList(
-    # Head --------------------------------------------------------------------
+    # Head
     shiny::tags$head(
       shiny::tags$title(title),
       shiny::tags$meta(charset = "utf-8"),
       shiny::tags$meta(name = "viewport", content = "width=device-width, initial-scale=1"),
-      shiny::tags$link(
-        rel = "stylesheet",
-        text = "text/css",
-        src = "css/uikit.min.css"
-      ),
-      shiny::tags$script(
-        src = "js/uikit.min.js"
-      ),shiny::tags$script(
-        src = "js/uikit-icons.min.js"
-      )
+      if (isTRUE(rtl)) {
+        shiny::tags$link(rel = "stylesheet", text = "text/css", src = "css/uikit.rtl.min.css")
+      } else {
+        shiny::tags$link(rel = "stylesheet", text = "text/css", src = "css/uikit.min.css") 
+      },
+      shiny::tags$script(src = "js/uikit.min.js"),
+      shiny::tags$script(src = "js/uikit-icons.min.js")
     ),
-    # Body --------------------------------------------------------------------
+    # Body 
     ...
   )
 }
