@@ -36,14 +36,17 @@ UIkitPage <- function(..., title = NULL, rtl = FALSE){
     shiny::tags$head(
       shiny::tags$title(title),
       shiny::tags$meta(charset = "utf-8"),
-      shiny::tags$meta(name = "viewport", content = "width=device-width, initial-scale=1"),
+      shiny::tags$meta(
+        name = "viewport", 
+        content = "width=device-width, initial-scale=1"
+      ),
       if (isTRUE(rtl)) {
-        shiny::tags$link(rel = "stylesheet", text = "text/css", src = "css/uikit.rtl.min.css")
+        shiny::includeCSS(system.file("css/uikit.rtl.min.css", package = "shinyUIkit"))
       } else {
-        shiny::tags$link(rel = "stylesheet", text = "text/css", src = "css/uikit.min.css") 
+        shiny::includeCSS(system.file("css/uikit.min.css", package = "shinyUIkit")) 
       },
-      shiny::tags$script(src = "js/uikit.min.js"),
-      shiny::tags$script(src = "js/uikit-icons.min.js")
+      shiny::includeScript(system.file("js/uikit.min.js", package = "shinyUIkit")),
+      shiny::includeScript(system.file("js/uikit-icons.min.js", package = "shinyUIkit"))
     ),
     # Body 
     ...

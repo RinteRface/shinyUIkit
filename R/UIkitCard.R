@@ -26,7 +26,7 @@
 #' @export
 UIkitCard <- function(..., title = NULL) {
   shiny::tags$div(
-    class = "uk-card uk-card-default uk-card-body",
+    class = "uk-card uk-card-default uk-card-body uk-width-1-2@m",
     shiny::tags$h3(class = "uk-card-title", title),
     ...
   )
