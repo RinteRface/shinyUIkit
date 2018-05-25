@@ -4,30 +4,69 @@
 \alias{UIkitCard}
 \title{Create a UIkit card}
 \usage{
-UIkitCard(..., title = NULL)
+UIkitCard(..., title = NULL, size = NULL, hover = "FALSE",
+  style = "default", header = NULL, body = NULL, footer = NULL,
+  badge = NULL, horizontal = FALSE)
 }
 \arguments{
 \item{...}{any element.}
 
 \item{title}{Card title.}
+
+\item{size}{Card size: either NULL, "small" or "large".}
+
+\item{hover}{Whether to trigger a hover effect. FALSE by default.}
+
+\item{style}{Card style: "default", "primary" or "secondary".}
+
+\item{header}{Header content, if any.}
+
+\item{body}{Body content, if any.}
+
+\item{footer}{Footer content, if any.}
+
+\item{badge}{Badge content, if any.}
+
+\item{horizontal}{Whether to display horizontal content. FALSE by default.
+If TRUE, use UIkitCardMedia with horizontal set to TRUE!}
 }
 \description{
 Build an UIkit card.
+}
+\note{
+Never use footer and header when horizontal is TRUE!
 }
 \examples{
 if(interactive()){
 library(shiny)
 
 shiny::shinyApp(
-  ui = UIkitPage(
+ ui = UIkitPage(
    title = "My UIkit application",
    UIkitCard(
-    title = "My card",
-    checkboxInput("somevalue", "Some value", FALSE)
+     title = "My card",
+     badge = "test",
+     hover = TRUE,
+     horizontal = TRUE,
+     UIkitCardMedia(src = "http://wallpics4k.com/wp-content/uploads/2014/07/470318.jpg",
+                    horizontal = TRUE, position = "left"),
+     body = "This is the body"
+   ),
+   UIkitCard(
+     title = "My card",
+     badge = "test",
+     hover = TRUE,
+     horizontal = FALSE,
+     header = "This is the header",
+     style = "secondary",
+     UIkitCardMedia(src = "http://wallpics4k.com/wp-content/uploads/2014/07/470318.jpg",
+                    horizontal = TRUE, position = "left"),
+     body = "This is the body",
+     footer = "This is the footer"
    )
-  ),
-  server = function(input, output) {}
-)
+ ),
+ server = function(input, output) {}
+ )
 }
 
 }
