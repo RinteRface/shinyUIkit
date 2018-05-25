@@ -59,8 +59,11 @@ shiny::shinyApp(
      horizontal = FALSE,
      header = "This is the header",
      style = "secondary",
-     UIkitCardMedia(src = "http://wallpics4k.com/wp-content/uploads/2014/07/470318.jpg",
-                    horizontal = TRUE, position = "left"),
+     UIkitCardMedia(
+      src = "http://wallpics4k.com/wp-content/uploads/2014/07/470318.jpg",
+      horizontal = TRUE, 
+      position = "left"
+     ),
      body = "This is the body",
      footer = "This is the footer"
    )
