@@ -8,6 +8,8 @@ UIkitAccordion(..., multiple = FALSE)
 }
 \arguments{
 \item{...}{slot for UIkitAccordionItem.}
+
+\item{multiple}{Whether to enable multiple collapsible events.}
 }
 \description{
 Build an UIkit accordion which can contain UIkitAccordionItem.

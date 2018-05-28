@@ -3,6 +3,7 @@
 export(UIkitAccordion)
 export(UIkitAccordionItem)
 export(UIkitAlert)
+export(UIkitBadge)
 export(UIkitCard)
 export(UIkitCardMedia)
 export(UIkitPage)

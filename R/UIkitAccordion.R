@@ -3,6 +3,7 @@
 #' Build an UIkit accordion which can contain UIkitAccordionItem.
 #'
 #' @param ... slot for UIkitAccordionItem.
+#' @param multiple Whether to enable multiple collapsible events.
 #'
 #' @examples
 #' if(interactive()){
