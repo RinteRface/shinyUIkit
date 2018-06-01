@@ -6,7 +6,7 @@
 \usage{
 UIkitCard(..., title = NULL, size = NULL, hover = "FALSE",
   style = "default", header = NULL, body = NULL, footer = NULL,
-  badge = NULL, horizontal = FALSE)
+  badge = NULL, horizontal = FALSE, width = "1-2")
 }
 \arguments{
 \item{...}{any element.}
@@ -29,6 +29,9 @@ UIkitCard(..., title = NULL, size = NULL, hover = "FALSE",
 
 \item{horizontal}{Whether to display horizontal content. FALSE by default.
 If TRUE, use UIkitCardMedia with horizontal set to TRUE!}
+
+\item{width}{Card width: if "1-2", the card will take half of the page width,
+"1-3" will be one third...}
 }
 \description{
 Build an UIkit card.
@@ -48,8 +51,11 @@ shiny::shinyApp(
      badge = "test",
      hover = TRUE,
      horizontal = TRUE,
-     UIkitCardMedia(src = "http://wallpics4k.com/wp-content/uploads/2014/07/470318.jpg",
-                    horizontal = TRUE, position = "left"),
+     UIkitCardMedia(
+      src = "http://wallpics4k.com/wp-content/uploads/2014/07/470318.jpg",
+      horizontal = TRUE, 
+      position = "left"
+     ),
      body = "This is the body"
    ),
    UIkitCard(

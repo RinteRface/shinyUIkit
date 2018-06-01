@@ -54,7 +54,7 @@ UIkitAlert <- function(..., color = NULL, closable = TRUE) {
   if (closable) {
     closeButtonTag <- shiny::tags$a(class = "uk-alert-close")
     closeButtonTag$attribs[["uk-close"]] <- NA
-    alertTag <- tagAppendChild(alertTag, closeButtonTag)
+    alertTag <- shiny::tagAppendChild(alertTag, closeButtonTag)
   }
   
   alertTag$attribs[["uk-alert"]] <- NA

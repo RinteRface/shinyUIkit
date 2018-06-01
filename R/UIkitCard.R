@@ -13,6 +13,8 @@
 #' @param badge Badge content, if any.
 #' @param horizontal Whether to display horizontal content. FALSE by default.
 #' If TRUE, use UIkitCardMedia with horizontal set to TRUE!
+#' @param width Card width: if "1-2", the card will take half of the page width,
+#' "1-3" will be one third...
 #' 
 #' @note Never use footer and header when horizontal is TRUE!
 #'
@@ -28,8 +30,11 @@
 #'      badge = "test",
 #'      hover = TRUE,
 #'      horizontal = TRUE,
-#'      UIkitCardMedia(src = "http://wallpics4k.com/wp-content/uploads/2014/07/470318.jpg",
-#'                     horizontal = TRUE, position = "left"),
+#'      UIkitCardMedia(
+#'       src = "http://wallpics4k.com/wp-content/uploads/2014/07/470318.jpg",
+#'       horizontal = TRUE, 
+#'       position = "left"
+#'      ),
 #'      body = "This is the body"
 #'    ),
 #'    UIkitCard(
@@ -57,9 +62,10 @@
 #' @export
 UIkitCard <- function(..., title = NULL, size = NULL, hover = "FALSE",
                       style = "default", header = NULL, body = NULL, 
-                      footer = NULL, badge = NULL, horizontal = FALSE) {
+                      footer = NULL, badge = NULL, horizontal = FALSE,
+                      width = "1-2") {
   
-  cardCl <- "uk-card uk-width-1-2@m"
+  cardCl <- "uk-card"
   
   if (!is.null(size)) cardCl <- paste0(cardCl, " uk-card-", size)
   if (!is.null(style)) cardCl <- paste0(cardCl, " uk-card-", style)
@@ -67,6 +73,7 @@ UIkitCard <- function(..., title = NULL, size = NULL, hover = "FALSE",
   if (isTRUE(horizontal)) cardCl <- paste0(
     cardCl, " uk-grid-collapse uk-child-width-1-2@s uk-margin"
     )
+  if (!is.null(width)) cardCl <- paste0(cardCl, " uk-width-", width)
   
   cardTag <- shiny::tags$div(
     class = cardCl,
