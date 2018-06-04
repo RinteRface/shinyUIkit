@@ -6,7 +6,8 @@
 \usage{
 UIkitCard(..., title = NULL, size = NULL, hover = "FALSE",
   style = "default", header = NULL, body = NULL, footer = NULL,
-  badge = NULL, horizontal = FALSE, width = "1-2")
+  badge = NULL, horizontal = FALSE, width = "1-2", shadow = NULL,
+  shadow_position = NULL)
 }
 \arguments{
 \item{...}{any element.}
@@ -32,6 +33,11 @@ If TRUE, use UIkitCardMedia with horizontal set to TRUE!}
 
 \item{width}{Card width: if "1-2", the card will take half of the page width,
 "1-3" will be one third...}
+
+\item{shadow}{Create a shadow around the box, similar to material design z-depth.
+"small", "medium", "large" or "xlarge". NULL by default.}
+
+\item{shadow_position}{Shadow position: NULL or "bottom".}
 }
 \description{
 Build an UIkit card.
@@ -58,6 +64,7 @@ shiny::shinyApp(
      ),
      body = "This is the body"
    ),
+   br(),
    UIkitCard(
      title = "My card",
      badge = "test",

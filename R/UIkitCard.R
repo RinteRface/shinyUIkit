@@ -15,6 +15,9 @@
 #' If TRUE, use UIkitCardMedia with horizontal set to TRUE!
 #' @param width Card width: if "1-2", the card will take half of the page width,
 #' "1-3" will be one third...
+#' @param shadow Create a shadow around the box, similar to material design z-depth.
+#' "small", "medium", "large" or "xlarge". NULL by default.
+#' @param shadow_position Shadow position: NULL or "bottom".
 #' 
 #' @note Never use footer and header when horizontal is TRUE!
 #'
@@ -37,6 +40,7 @@
 #'      ),
 #'      body = "This is the body"
 #'    ),
+#'    br(),
 #'    UIkitCard(
 #'      title = "My card",
 #'      badge = "test",
@@ -63,7 +67,7 @@
 UIkitCard <- function(..., title = NULL, size = NULL, hover = "FALSE",
                       style = "default", header = NULL, body = NULL, 
                       footer = NULL, badge = NULL, horizontal = FALSE,
-                      width = "1-2") {
+                      width = "1-2", shadow = NULL, shadow_position = NULL) {
   
   cardCl <- "uk-card"
   
@@ -74,6 +78,14 @@ UIkitCard <- function(..., title = NULL, size = NULL, hover = "FALSE",
     cardCl, " uk-grid-collapse uk-child-width-1-2@s uk-margin"
     )
   if (!is.null(width)) cardCl <- paste0(cardCl, " uk-width-", width)
+  if (!is.null(shadow)) {
+    if (!is.null(shadow_position)) {
+      cardCl <- paste0(cardCl, " uk-box-shadow-bottom uk-box-shadow-", shadow)
+    } else {
+      cardCl <- paste0(cardCl, " uk-box-shadow-", shadow)
+    }
+  }
+    
   
   cardTag <- shiny::tags$div(
     class = cardCl,
