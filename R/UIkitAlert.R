@@ -44,7 +44,8 @@
 #' @export
 UIkitAlert <- function(..., color = NULL, closable = TRUE) {
   
-  alertCl <- if (!is.null(color)) paste0("uk-alert-", color) else NULL
+  alertCl <- "uk-width-1-6"
+  if (!is.null(color)) alertCl <- paste0(alertCl, " uk-alert-", color) 
   
   alertTag <- shiny::tags$div(
     class = alertCl,
