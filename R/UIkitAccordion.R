@@ -12,27 +12,33 @@
 #' shiny::shinyApp(
 #'  ui = UIkitPage(
 #'    title = "My UIkit application",
-#'    UIkitAccordion(
-#'     UIkitAccordionItem(
-#'      title = "Item 1",
-#'      opened = TRUE, 
-#'      "Lorem ipsum dolor sit amet, consectetur 
-#'      adipiscing elit, sed do eiusmod tempor 
-#'      incididunt ut labore et dolore magna aliqua"
-#'     ),
-#'     UIkitAccordionItem(
-#'      title = "Item 2",
-#'      "Lorem ipsum dolor sit amet, consectetur 
-#'      adipiscing elit, sed do eiusmod tempor 
-#'      incididunt ut labore et dolore magna aliqua"
-#'     ),
-#'     UIkitAccordionItem(
-#'      title = "Item 3",
-#'      "Lorem ipsum dolor sit amet, consectetur 
-#'      adipiscing elit, sed do eiusmod tempor 
-#'      incididunt ut labore et dolore magna aliqua"
+#'    UIkitContainer(
+#'     size = "large",
+#'     UIkitGrid(
+#'      child_width = "1-2",
+#'      UIkitAccordion(
+#'      UIkitAccordionItem(
+#'       title = "Item 1",
+#'       opened = TRUE, 
+#'       "Lorem ipsum dolor sit amet, consectetur 
+#'       adipiscing elit, sed do eiusmod tempor 
+#'       incididunt ut labore et dolore magna aliqua"
+#'      ),
+#'      UIkitAccordionItem(
+#'       title = "Item 2",
+#'       "Lorem ipsum dolor sit amet, consectetur 
+#'       adipiscing elit, sed do eiusmod tempor 
+#'       incididunt ut labore et dolore magna aliqua"
+#'      ),
+#'      UIkitAccordionItem(
+#'       title = "Item 3",
+#'       "Lorem ipsum dolor sit amet, consectetur 
+#'       adipiscing elit, sed do eiusmod tempor 
+#'       incididunt ut labore et dolore magna aliqua"
+#'      )
 #'     )
-#'    )
+#'    ) 
+#'   )
 #'  ),
 #'  server = function(input, output) {}
 #'  )
