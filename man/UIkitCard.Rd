@@ -31,8 +31,10 @@ UIkitCard(..., title = NULL, size = NULL, hover = "FALSE",
 \item{horizontal}{Whether to display horizontal content. FALSE by default.
 If TRUE, use UIkitCardMedia with horizontal set to TRUE!}
 
-\item{width}{Card width: if "1-2", the card will take half of the page width,
-"1-3" will be one third...}
+\item{width}{Card width: if "1-2", the card will take half of the page,
+"1-3" will be one third... If you wrap card in a grid layout, set width to NULL
+since the grid will handle it automatically. The sum of all element containing
+width should be 1.}
 
 \item{shadow}{Create a shadow around the box, similar to material design z-depth.
 "small", "medium", "large" or "xlarge". NULL by default.}

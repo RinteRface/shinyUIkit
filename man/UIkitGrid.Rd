@@ -4,7 +4,7 @@
 \alias{UIkitGrid}
 \title{Create an UIkit grid}
 \usage{
-UIkitGrid(..., gutter = NULL, divider = FALSE)
+UIkitGrid(..., gutter = NULL, divider = FALSE, child_width = NULL)
 }
 \arguments{
 \item{...}{Slot for an UIkitGridElement.}
@@ -14,6 +14,9 @@ or "collapse".}
 
 \item{divider}{Whether to separate grid elements with a vertical divider.
 FALSE by default.}
+
+\item{child_width}{Set an automatic width for all UIkitGridElement. From "1-2"
+to "1-6" as well as "auto" and "expand"}
 }
 \description{
 Create a fully responsive, fluid and nestable grid layout
@@ -30,6 +33,7 @@ shiny::shinyApp(
  ui = UIkitPage(
    title = "My UIkit application",
    UIkitGrid(
+    child_width = "expand",
     gutter = "small",
     UIkitGridElement(
      UIkitCard(

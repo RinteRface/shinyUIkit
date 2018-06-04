@@ -4,13 +4,19 @@
 \alias{UIkitGridElement}
 \title{Create an UIkit grid element}
 \usage{
-UIkitGridElement(...)
+UIkitGridElement(..., width = NULL)
 }
 \arguments{
 \item{...}{Any UI element.}
+
+\item{width}{Item width. See \url{https://getuikit.com/docs/width}.}
 }
 \description{
 Element to insert in a grid layout.
+}
+\note{
+If the arguement child_width from UIkitGrid is not NULL, you do not
+need to provide any individual width argument to the grid element!
 }
 \author{
 David Granjon, \email{dgranjon@gmail.com}
