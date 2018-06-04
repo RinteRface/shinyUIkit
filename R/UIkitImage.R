@@ -2,8 +2,9 @@
 #'
 #' Create a special UIkit ready image tag
 #' 
-#' @param title Heading content.
-#' @param style Heading style: "primary", "hero", "divider", "bullet" and "line".
+#' @param src Image source or path.
+#' @param width Image width in pixels.
+#' @param height Image height in pixels.
 #'
 #' @examples
 #' if(interactive()){

@@ -12,7 +12,7 @@ UIkitProgress(value, max)
 \item{max}{Maximum value.}
 }
 \description{
-Defines progress bars that indicate how far along a process is
+Defines progress bars that indicate how far along a process is started
 }
 \examples{
 if(interactive()){

@@ -1,6 +1,6 @@
 #' Create an UIkit progress bar
 #'
-#' Defines progress bars that indicate how far along a process is
+#' Defines progress bars that indicate how far along a process is started
 #' 
 #' @param value Current value.
 #' @param max Maximum value.

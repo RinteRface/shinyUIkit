@@ -7,9 +7,11 @@
 UIkitImage(src = NULL, width, height)
 }
 \arguments{
-\item{title}{Heading content.}
+\item{src}{Image source or path.}
 
-\item{style}{Heading style: "primary", "hero", "divider", "bullet" and "line".}
+\item{width}{Image width in pixels.}
+
+\item{height}{Image height in pixels.}
 }
 \description{
 Create a special UIkit ready image tag
