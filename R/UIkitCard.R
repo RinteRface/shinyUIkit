@@ -17,6 +17,7 @@
 #' "1-3" will be one third... If you wrap card in a grid layout, set width to NULL
 #' since the grid will handle it automatically. The sum of all element containing
 #' width should be 1.
+#' @param height Card height: "small", "medium" or "large".
 #' @param shadow Create a shadow around the box, similar to material design z-depth.
 #' "small", "medium", "large" or "xlarge". NULL by default.
 #' @param shadow_position Shadow position: NULL or "bottom".
@@ -30,33 +31,51 @@
 #' shiny::shinyApp(
 #'  ui = UIkitPage(
 #'    title = "My UIkit application",
-#'    UIkitCard(
-#'      title = "My card",
-#'      badge = "test",
-#'      hover = TRUE,
-#'      horizontal = TRUE,
-#'      UIkitCardMedia(
-#'       src = "http://wallpics4k.com/wp-content/uploads/2014/07/470318.jpg",
-#'       horizontal = TRUE, 
-#'       position = "left"
-#'      ),
-#'      body = "This is the body"
-#'    ),
-#'    br(),
-#'    UIkitCard(
-#'      title = "My card",
-#'      badge = "test",
-#'      hover = TRUE,
-#'      horizontal = FALSE,
-#'      header = "This is the header",
-#'      style = "secondary",
-#'      UIkitCardMedia(
-#'       src = "http://wallpics4k.com/wp-content/uploads/2014/07/470318.jpg",
-#'       horizontal = TRUE, 
-#'       position = "left"
-#'      ),
-#'      body = "This is the body",
-#'      footer = "This is the footer"
+#'    UIkitGrid(
+#'     child_width = "expand",
+#'     gutter = "small",
+#'     UIkitGridElement(
+#'      UIkitCard(
+#'       width = NULL,
+#'       height = "medium",
+#'       title = "My card",
+#'       hover = TRUE,
+#'       style = "primary",
+#'       horizontal = FALSE,
+#'       header = "This is the header",
+#'       body = "This is the body",
+#'       footer = "This is the footer"
+#'      )
+#'     ),
+#'     UIkitGridElement(
+#'      UIkitCard(
+#'       width = NULL,
+#'       title = "My card",
+#'       badge = "test",
+#'       horizontal = FALSE,
+#'       UIkitCardMedia(
+#'         src = "http://wallpics4k.com/wp-content/uploads/2014/07/470318.jpg",
+#'         horizontal = TRUE, 
+#'         position = "left"
+#'       ),
+#'       body = "This is the body"
+#'      )
+#'     ),
+#'     UIkitGridElement(
+#'      UIkitCard(
+#'       width = NULL,
+#'       title = "My card",
+#'       hover = TRUE,
+#'       horizontal = TRUE,
+#'       height = "medium",
+#'       UIkitCardMedia(
+#'         src = "http://wallpics4k.com/wp-content/uploads/2014/07/470318.jpg",
+#'         horizontal = TRUE, 
+#'         position = "left"
+#'       ),
+#'       body = "This is the body"
+#'      )
+#'     )
 #'    )
 #'  ),
 #'  server = function(input, output) {}
@@ -69,7 +88,8 @@
 UIkitCard <- function(..., title = NULL, size = NULL, hover = "FALSE",
                       style = "default", header = NULL, body = NULL, 
                       footer = NULL, badge = NULL, horizontal = FALSE,
-                      width = "1-2", shadow = NULL, shadow_position = NULL) {
+                      width = "1-2", height = NULL, shadow = NULL, 
+                      shadow_position = NULL) {
   
   cardCl <- "uk-card"
   
@@ -80,6 +100,8 @@ UIkitCard <- function(..., title = NULL, size = NULL, hover = "FALSE",
     cardCl, " uk-grid-collapse uk-child-width-1-2@s uk-margin"
     )
   if (!is.null(width)) cardCl <- paste0(cardCl, " uk-width-", width)
+  if (!is.null(height)) cardCl <- paste0(cardCl, " uk-height-", height)
+  
   if (!is.null(shadow)) {
     if (!is.null(shadow_position)) {
       cardCl <- paste0(cardCl, " uk-box-shadow-bottom uk-box-shadow-", shadow)

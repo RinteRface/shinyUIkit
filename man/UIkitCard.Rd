@@ -6,8 +6,8 @@
 \usage{
 UIkitCard(..., title = NULL, size = NULL, hover = "FALSE",
   style = "default", header = NULL, body = NULL, footer = NULL,
-  badge = NULL, horizontal = FALSE, width = "1-2", shadow = NULL,
-  shadow_position = NULL)
+  badge = NULL, horizontal = FALSE, width = "1-2", height = NULL,
+  shadow = NULL, shadow_position = NULL)
 }
 \arguments{
 \item{...}{any element.}
@@ -36,6 +36,8 @@ If TRUE, use UIkitCardMedia with horizontal set to TRUE!}
 since the grid will handle it automatically. The sum of all element containing
 width should be 1.}
 
+\item{height}{Card height: "small", "medium" or "large".}
+
 \item{shadow}{Create a shadow around the box, similar to material design z-depth.
 "small", "medium", "large" or "xlarge". NULL by default.}
 
@@ -54,33 +56,51 @@ library(shiny)
 shiny::shinyApp(
  ui = UIkitPage(
    title = "My UIkit application",
-   UIkitCard(
-     title = "My card",
-     badge = "test",
-     hover = TRUE,
-     horizontal = TRUE,
-     UIkitCardMedia(
-      src = "http://wallpics4k.com/wp-content/uploads/2014/07/470318.jpg",
-      horizontal = TRUE, 
-      position = "left"
-     ),
-     body = "This is the body"
-   ),
-   br(),
-   UIkitCard(
-     title = "My card",
-     badge = "test",
-     hover = TRUE,
-     horizontal = FALSE,
-     header = "This is the header",
-     style = "secondary",
-     UIkitCardMedia(
-      src = "http://wallpics4k.com/wp-content/uploads/2014/07/470318.jpg",
-      horizontal = TRUE, 
-      position = "left"
-     ),
-     body = "This is the body",
-     footer = "This is the footer"
+   UIkitGrid(
+    child_width = "expand",
+    gutter = "small",
+    UIkitGridElement(
+     UIkitCard(
+      width = NULL,
+      height = "medium",
+      title = "My card",
+      hover = TRUE,
+      style = "primary",
+      horizontal = FALSE,
+      header = "This is the header",
+      body = "This is the body",
+      footer = "This is the footer"
+     )
+    ),
+    UIkitGridElement(
+     UIkitCard(
+      width = NULL,
+      title = "My card",
+      badge = "test",
+      horizontal = FALSE,
+      UIkitCardMedia(
+        src = "http://wallpics4k.com/wp-content/uploads/2014/07/470318.jpg",
+        horizontal = TRUE, 
+        position = "left"
+      ),
+      body = "This is the body"
+     )
+    ),
+    UIkitGridElement(
+     UIkitCard(
+      width = NULL,
+      title = "My card",
+      hover = TRUE,
+      horizontal = TRUE,
+      height = "medium",
+      UIkitCardMedia(
+        src = "http://wallpics4k.com/wp-content/uploads/2014/07/470318.jpg",
+        horizontal = TRUE, 
+        position = "left"
+      ),
+      body = "This is the body"
+     )
+    )
    )
  ),
  server = function(input, output) {}
