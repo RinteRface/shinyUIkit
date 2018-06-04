@@ -41,12 +41,11 @@ UIkitTab <- function(..., align = NULL, vertical = FALSE,
   if (isTRUE(vertical)) tabCl <- paste0(tabCl, " uk-tab-right")
   if (isTRUE(bottom)) tabCl <- paste0(tabCl, " uk-tab-bottom")
   
-  tabsTag <- shiny::tags$ul(
+  shiny::tags$ul(
     class = tabCl,
+    `uk-tab` = NA,
     ...
   )
-  tabsTag$attribs[["uk-tab"]] <- NA
-  tabsTag
 } 
 
 
@@ -56,6 +55,7 @@ UIkitTab <- function(..., align = NULL, vertical = FALSE,
 #'
 #' Item to insert in an UI kit tabset
 #' 
+#' @param ... Tab Item content.
 #' @param tabItemName Tab item name. 
 #' @param active Whether to active the item or not. FALSE by default.
 #' @param disabled Whether to disable the tab or not. FALSE by default.
@@ -63,14 +63,15 @@ UIkitTab <- function(..., align = NULL, vertical = FALSE,
 #' @author David Granjon, \email{dgranjon@@gmail.com}
 #'
 #' @export
-UIkitTabItem <- function(tabItemName = NULL, active = FALSE, disabled = FALSE) {
+UIkitTabItem <- function(..., tabItemName = NULL, active = FALSE, disabled = FALSE) {
   
   tabItemCl <- NULL
-  if (isTRUE(active)) tabItemCl <- paste0(tabItemCl, "uk-active")
-  if (isTRUE(disabled)) tabItemCl <- paste0(tabItemCl, "uk-disabled")
+  if (isTRUE(active)) tabItemCl <- paste0(tabItemCl, " uk-active")
+  if (isTRUE(disabled)) tabItemCl <- paste0(tabItemCl, " uk-disabled")
   
   shiny::tags$li(
     class = tabItemCl,
-    shiny::tags$a(href = "#", tabItemName)
+    shiny::tags$a(href = "#", tabItemName),
+    ...
   )
 }

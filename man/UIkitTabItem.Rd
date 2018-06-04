@@ -4,9 +4,11 @@
 \alias{UIkitTabItem}
 \title{Create an UIkit tab item}
 \usage{
-UIkitTabItem(tabItemName = NULL, active = FALSE, disabled = FALSE)
+UIkitTabItem(..., tabItemName = NULL, active = FALSE, disabled = FALSE)
 }
 \arguments{
+\item{...}{Tab Item content.}
+
 \item{tabItemName}{Tab item name.}
 
 \item{active}{Whether to active the item or not. FALSE by default.}
