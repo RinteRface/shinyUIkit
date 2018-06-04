@@ -21,5 +21,6 @@
 #'
 #' @export
 UIkitBadge <- function(content) {
+  stopifnot(!is.null(content))
   shiny::tags$span(class = "uk-badge", content)
 }

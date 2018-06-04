@@ -14,25 +14,13 @@
 #' shiny::shinyApp(
 #'  ui = UIkitPage(
 #'    title = "My UIkit application",
-#'    UIkitWidth(
-#'      ratio = "1-6",
-#'      UIkitTile("Default")
-#'    ),
-#'    UIkitWidth(
-#'      ratio = "1-6",
-#'      UIkitTile(style = "muted", "Muted")
-#'    ),
-#'    UIkitWidth(
-#'      ratio = "1-6",
-#'      UIkitTile(style = "primary", "Primary")
-#'    ),
-#'    UIkitWidth(
-#'      ratio = "1-6",
-#'      UIkitTile(style = "secondary", "Secondary")
-#'    ),
-#'    UIkitWidth(
-#'      ratio = "1-6",
-#'      UIkitTile(style = "primary", padding = "large", "Primary Large")
+#'    UIkitGrid(
+#'     child_width = "1-6",
+#'     UIkitTile("Default"),
+#'     UIkitTile(style = "muted", "Muted"),
+#'     UIkitTile(style = "primary", "Primary"),
+#'     UIkitTile(style = "secondary", "Secondary"),
+#'     UIkitTile(style = "primary", padding = "large", "Primary Large")
 #'    )
 #'  ),
 #'  server = function(input, output) {}
@@ -51,7 +39,7 @@ UIkitTile <- function(..., style = NULL, padding = NULL) {
     tileCl <- paste0(tileCl, " uk-tile-", style)
   }
   
-  if (!is.null(padding)) tileCl <- paste0(tileCl, " uk-padding", padding)
+  if (!is.null(padding)) tileCl <- paste0(tileCl, " uk-padding-", padding)
   
   shiny::tags$div(
     class = tileCl,

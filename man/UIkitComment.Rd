@@ -27,8 +27,8 @@ library(shiny)
 shiny::shinyApp(
  ui = UIkitPage(
    title = "My UIkit application",
-   UIkitColumns(
-    n = 2,
+   UIkitGrid(
+    child_width = "1-2",
     UIkitComment(
       src = "https://getuikit.com/docs/images/avatar.jpg",
       author = "Germaine",

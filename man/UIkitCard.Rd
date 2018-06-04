@@ -2,12 +2,12 @@
 % Please edit documentation in R/UIkitCard.R
 \name{UIkitCard}
 \alias{UIkitCard}
-\title{Create a UIkit card}
+\title{Create an UIkit card}
 \usage{
 UIkitCard(..., title = NULL, size = NULL, hover = "FALSE",
   style = "default", header = NULL, body = NULL, footer = NULL,
   badge = NULL, horizontal = FALSE, width = "1-2", height = NULL,
-  shadow = NULL, shadow_position = NULL)
+  shadow = NULL, shadow_position = NULL, animation = NULL)
 }
 \arguments{
 \item{...}{any element.}
@@ -34,7 +34,8 @@ If TRUE, use UIkitCardMedia with horizontal set to TRUE!}
 \item{width}{Card width: if "1-2", the card will take half of the page,
 "1-3" will be one third... If you wrap card in a grid layout, set width to NULL
 since the grid will handle it automatically. The sum of all element containing
-width should be 1.}
+width should be 1. You can also specify fixed width such as "small", "medium", "large",
+"xlarge", "xxlarge".}
 
 \item{height}{Card height: "small", "medium" or "large".}
 
@@ -42,9 +43,11 @@ width should be 1.}
 "small", "medium", "large" or "xlarge". NULL by default.}
 
 \item{shadow_position}{Shadow position: NULL or "bottom".}
+
+\item{animation}{NULL by default: card animation if any, see \url{https://getuikit.com/docs/animation#usage}.}
 }
 \description{
-Build an UIkit card.
+Create layout boxes with different styles
 }
 \note{
 Never use footer and header when horizontal is TRUE!
@@ -88,6 +91,7 @@ shiny::shinyApp(
     ),
     UIkitGridElement(
      UIkitCard(
+      animation = "shake",
       width = NULL,
       title = "My card",
       hover = TRUE,

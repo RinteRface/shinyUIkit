@@ -1,6 +1,6 @@
-#' Create a UIkit card
+#' Create an UIkit card
 #'
-#' Build an UIkit card.
+#' Create layout boxes with different styles
 #'
 #' @param ... any element.
 #' @param title Card title.
@@ -16,11 +16,13 @@
 #' @param width Card width: if "1-2", the card will take half of the page,
 #' "1-3" will be one third... If you wrap card in a grid layout, set width to NULL
 #' since the grid will handle it automatically. The sum of all element containing
-#' width should be 1.
+#' width should be 1. You can also specify fixed width such as "small", "medium", "large",
+#' "xlarge", "xxlarge".
 #' @param height Card height: "small", "medium" or "large".
 #' @param shadow Create a shadow around the box, similar to material design z-depth.
 #' "small", "medium", "large" or "xlarge". NULL by default.
 #' @param shadow_position Shadow position: NULL or "bottom".
+#' @param animation NULL by default: card animation if any, see \url{https://getuikit.com/docs/animation#usage}.
 #' 
 #' @note Never use footer and header when horizontal is TRUE!
 #'
@@ -63,6 +65,7 @@
 #'     ),
 #'     UIkitGridElement(
 #'      UIkitCard(
+#'       animation = "shake",
 #'       width = NULL,
 #'       title = "My card",
 #'       hover = TRUE,
@@ -89,7 +92,7 @@ UIkitCard <- function(..., title = NULL, size = NULL, hover = "FALSE",
                       style = "default", header = NULL, body = NULL, 
                       footer = NULL, badge = NULL, horizontal = FALSE,
                       width = "1-2", height = NULL, shadow = NULL, 
-                      shadow_position = NULL) {
+                      shadow_position = NULL, animation = NULL) {
   
   cardCl <- "uk-card"
   
@@ -109,6 +112,8 @@ UIkitCard <- function(..., title = NULL, size = NULL, hover = "FALSE",
       cardCl <- paste0(cardCl, " uk-box-shadow-", shadow)
     }
   }
+  
+  if (!is.null(animation)) cardCl <- paste0(cardCl, " uk-animation-", animation)
     
   
   cardTag <- shiny::tags$div(
@@ -145,7 +150,16 @@ UIkitCard <- function(..., title = NULL, size = NULL, hover = "FALSE",
   
   if (horizontal) cardTag$attribs[["uk-grid"]] <- NA
   
-  cardTag
+  
+  # return the cardTag
+  if (!is.null(animation)) {
+    shiny::tags$div(
+      class = "uk-animation-toggle",
+      cardTag
+    )
+  } else {
+    cardTag
+  }
   
 }
 

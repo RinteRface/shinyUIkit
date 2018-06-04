@@ -21,7 +21,9 @@ library(shiny)
 shiny::shinyApp(
  ui = UIkitPage(
    title = "My UIkit application",
-   UIkitDescriptionList(
+   UIkitGrid(
+    child_width = "1-2",
+    UIkitDescriptionList(
     divider = TRUE,
     UIkitDescriptionListItem(
      title = "Description term",
@@ -35,6 +37,7 @@ shiny::shinyApp(
      title = "Description term",
      "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     )
+   )
    )
  ),
  server = function(input, output) {}

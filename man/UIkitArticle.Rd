@@ -25,7 +25,8 @@ library(shiny)
 shiny::shinyApp(
  ui = UIkitPage(
    title = "My UIkit application",
-   UIkitContainer(
+   UIkitGrid(
+    child_width = "1-2",
     UIkitArticle(
       title = "Heading",
       metadata = "Written by Super User on 12 April 2012. Posted in Blog",
