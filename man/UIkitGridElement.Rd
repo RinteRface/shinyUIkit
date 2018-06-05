@@ -19,5 +19,5 @@ If the arguement child_width from UIkitGrid is not NULL, you do not
 need to provide any individual width argument to the grid element!
 }
 \author{
-David Granjon, \email{dgranjon@gmail.com}
+David Granjon, \email{dgranjon@ymail.com}
 }

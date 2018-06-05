@@ -46,7 +46,7 @@
 #'  )
 #' }
 #' 
-#' @author David Granjon, \email{dgranjon@@gmail.com}
+#' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export
 UIkitHeading <- function(title, style) {

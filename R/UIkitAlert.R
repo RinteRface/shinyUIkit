@@ -1,4 +1,4 @@
-#' Create a UIkit alert
+#' Create an UIkit alert
 #'
 #' Build an UIkit alert.
 #'
@@ -13,33 +13,51 @@
 #' shiny::shinyApp(
 #'  ui = UIkitPage(
 #'    title = "My UIkit application",
-#'    UIkitAlert(
-#'     color = "primary",
-#'     h3("Primary Notice"),
-#'     "Lorem ipsum dolor sit amet, consectetur 
-#'     adipiscing elit, sed do eiusmod tempor 
-#'     incididunt"
+#'    h1("Alerts are displayed, if slider > 5"),
+#'    sliderInput(
+#'     "slider", 
+#'     "Number of observations:",
+#'      min = 0, 
+#'      max = 10, 
+#'      value = 2
 #'    ),
-#'    UIkitAlert(
-#'     color = "danger",
-#'     h3("Danger Notice"),
-#'     "Lorem ipsum dolor sit amet, consectetur 
-#'     adipiscing elit, sed do eiusmod tempor 
-#'     incididunt"
-#'    ),
-#'    UIkitAlert(
-#'     color = "warning",
-#'     h3("Warning Notice"),
-#'     "Lorem ipsum dolor sit amet, consectetur 
-#'     adipiscing elit, sed do eiusmod tempor 
-#'     incididunt"
-#'    )
+#'    uiOutput("alerts")
 #'  ),
-#'  server = function(input, output) {}
+#'  server = function(input, output) {
+#'   
+#'   output$alerts <- renderUI({
+#'    if (input$slider > 5) {
+#'     tagList(
+#'      UIkitAlert(
+#'       color = "primary",
+#'       h3("Primary Notice"),
+#'       "Lorem ipsum dolor sit amet, consectetur 
+#'       adipiscing elit, sed do eiusmod tempor 
+#'       incididunt"
+#'      ),
+#'      UIkitAlert(
+#'       color = "danger",
+#'       h3("Danger Notice"),
+#'       "Lorem ipsum dolor sit amet, consectetur 
+#'       adipiscing elit, sed do eiusmod tempor 
+#'       incididunt"
+#'      ),
+#'      UIkitAlert(
+#'       color = "warning",
+#'       h3("Warning Notice"),
+#'       "Lorem ipsum dolor sit amet, consectetur 
+#'       adipiscing elit, sed do eiusmod tempor 
+#'       incididunt"
+#'      )
+#'     )
+#'    }
+#'   })
+#'  
+#'  }
 #'  )
 #' }
 #' 
-#' @author David Granjon, \email{dgranjon@@gmail.com}
+#' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export
 UIkitAlert <- function(..., color = NULL, closable = TRUE) {

@@ -30,7 +30,7 @@
 #'  )
 #' }
 #' 
-#' @author David Granjon, \email{dgranjon@@gmail.com}
+#' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export
 UIkitTab <- function(..., align = NULL, vertical = FALSE,
@@ -60,7 +60,7 @@ UIkitTab <- function(..., align = NULL, vertical = FALSE,
 #' @param active Whether to active the item or not. FALSE by default.
 #' @param disabled Whether to disable the tab or not. FALSE by default.
 #'
-#' @author David Granjon, \email{dgranjon@@gmail.com}
+#' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export
 UIkitTabItem <- function(..., tabItemName = NULL, active = FALSE, disabled = FALSE) {

@@ -13,5 +13,5 @@ UIkitSortableItem(...)
 To put inside a sortable grid
 }
 \author{
-David Granjon, \email{dgranjon@gmail.com}
+David Granjon, \email{dgranjon@ymail.com}
 }

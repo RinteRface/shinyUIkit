@@ -15,5 +15,5 @@ UIkitDescriptionListItem(..., title)
 Create an UIkit description list item
 }
 \author{
-David Granjon, \email{dgranjon@gmail.com}
+David Granjon, \email{dgranjon@ymail.com}
 }

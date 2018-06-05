@@ -30,7 +30,7 @@
 #'  )
 #' }
 #' 
-#' @author David Granjon, \email{dgranjon@@gmail.com}
+#' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export
 UIkitSortable <- function(...) {
@@ -54,7 +54,7 @@ UIkitSortable <- function(...) {
 #' 
 #' @param ... Any UI element to be sorted.
 #' 
-#' @author David Granjon, \email{dgranjon@@gmail.com}
+#' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export
 UIkitSortableItem <- function(...) {

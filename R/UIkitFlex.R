@@ -34,7 +34,7 @@
 #'  )
 #' }
 #' 
-#' @author David Granjon, \email{dgranjon@@gmail.com}
+#' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export
 UIkitFlex <- function(..., horiz_align = NULL, vert_align = NULL,
@@ -64,7 +64,7 @@ UIkitFlex <- function(..., horiz_align = NULL, vert_align = NULL,
 #' 
 #' @param ... Any UI element.
 #'
-#' @author David Granjon, \email{dgranjon@@gmail.com}
+#' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export
 UIkitFlexElement <- function(...) {

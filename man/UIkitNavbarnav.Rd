@@ -23,5 +23,5 @@ and the sidebar itself.}
 To insert in a UIkitNavbar container
 }
 \author{
-David Granjon, \email{dgranjon@gmail.com}
+David Granjon, \email{dgranjon@ymail.com}
 }

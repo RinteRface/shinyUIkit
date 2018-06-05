@@ -21,7 +21,7 @@
 #'  )
 #' }
 #' 
-#' @author David Granjon, \email{dgranjon@@gmail.com}
+#' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export
 UIkitLightbox <- function(src = NULL, caption = NULL) {

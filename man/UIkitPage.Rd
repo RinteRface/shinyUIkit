@@ -2,7 +2,7 @@
 % Please edit documentation in R/UIkitPage.R
 \name{UIkitPage}
 \alias{UIkitPage}
-\title{Create a UIkit page}
+\title{Create an UIkit page}
 \usage{
 UIkitPage(..., title = NULL, navbar = NULL, rtl = FALSE)
 }
@@ -40,5 +40,5 @@ shiny::shinyApp(
 
 }
 \author{
-David Granjon, \email{dgranjon@gmail.com}
+David Granjon, \email{dgranjon@ymail.com}
 }

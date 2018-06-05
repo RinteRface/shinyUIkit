@@ -52,7 +52,7 @@
 #'  )
 #' }
 #' 
-#' @author David Granjon, \email{dgranjon@@gmail.com}
+#' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export
 UIkitSection <- function(..., title = NULL, style = NULL,
@@ -81,7 +81,7 @@ UIkitSection <- function(..., title = NULL, style = NULL,
 #' 
 #' @param ... Any UI element.
 #' 
-#' @author David Granjon, \email{dgranjon@@gmail.com}
+#' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export
 UIkitSectionItem <- function(...) {

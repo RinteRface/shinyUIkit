@@ -2,7 +2,7 @@
 % Please edit documentation in R/UIkitAccordion.R
 \name{UIkitAccordion}
 \alias{UIkitAccordion}
-\title{Create a UIkit accordion}
+\title{Create an UIkit accordion}
 \usage{
 UIkitAccordion(..., multiple = FALSE)
 }
@@ -55,5 +55,5 @@ shiny::shinyApp(
 
 }
 \author{
-David Granjon, \email{dgranjon@gmail.com}
+David Granjon, \email{dgranjon@ymail.com}
 }

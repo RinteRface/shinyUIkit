@@ -74,7 +74,7 @@
 #'  )
 #' }
 #' 
-#' @author David Granjon, \email{dgranjon@@gmail.com}
+#' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export
 UIkitGrid <- function(..., gutter = NULL, divider = FALSE, child_width = NULL) {
@@ -101,7 +101,7 @@ UIkitGrid <- function(..., gutter = NULL, divider = FALSE, child_width = NULL) {
 #' @note If the arguement child_width from UIkitGrid is not NULL, you do not
 #' need to provide any individual width argument to the grid element!
 #'
-#' @author David Granjon, \email{dgranjon@@gmail.com}
+#' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export
 UIkitGridElement <- function(..., width = NULL) {

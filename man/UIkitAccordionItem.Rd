@@ -2,7 +2,7 @@
 % Please edit documentation in R/UIkitAccordion.R
 \name{UIkitAccordionItem}
 \alias{UIkitAccordionItem}
-\title{Create a UIkit accordion item}
+\title{Create an UIkit accordion item}
 \usage{
 UIkitAccordionItem(..., title = NULL, opened = FALSE)
 }
@@ -17,5 +17,5 @@ UIkitAccordionItem(..., title = NULL, opened = FALSE)
 Build an UIkit accordion item which can be embedded in an UIkitAccordion.
 }
 \author{
-David Granjon, \email{dgranjon@gmail.com}
+David Granjon, \email{dgranjon@ymail.com}
 }

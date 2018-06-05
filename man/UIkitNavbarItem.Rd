@@ -13,5 +13,5 @@ UIkitNavbarItem(...)
 To insert in any item in a navigation bar
 }
 \author{
-David Granjon, \email{dgranjon@gmail.com}
+David Granjon, \email{dgranjon@ymail.com}
 }

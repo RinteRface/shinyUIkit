@@ -1,4 +1,4 @@
-#' Create a UIkit column
+#' Create an UIkit column
 #'
 #' Build a set of columns.
 #' 
@@ -49,7 +49,7 @@
 #'  )
 #' }
 #' 
-#' @author David Granjon, \email{dgranjon@@gmail.com}
+#' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export
 UIkitColumns <- function(..., n, divider = FALSE) {
@@ -69,14 +69,14 @@ UIkitColumns <- function(..., n, divider = FALSE) {
 
 
 
-#' Create a UIkit special p tag
+#' Create an UIkit special p tag
 #'
 #' This p tag is designed for displayed inline element
 #' in a column layout
 #' 
 #' @param ... Any UI element.
 #' 
-#' @author David Granjon, \email{dgranjon@@gmail.com}
+#' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export
 UIkitColumnSpan <- function(...) {

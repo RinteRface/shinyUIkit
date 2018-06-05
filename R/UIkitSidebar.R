@@ -42,7 +42,7 @@
 #'  )
 #' }
 #' 
-#' @author David Granjon, \email{dgranjon@@gmail.com}
+#' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export
 UIkitSidebarLayout <- function(sidebarPanel, mainPanel) {
@@ -66,7 +66,7 @@ UIkitSidebarLayout <- function(sidebarPanel, mainPanel) {
 #' TRUE by default.
 #' @param flip Whether to open the sidebar on the right side. TRUE by default.
 #' 
-#' @author David Granjon, \email{dgranjon@@gmail.com}
+#' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export
 UIkitSidebar <- function(..., id, overlay = TRUE, flip = TRUE) {
@@ -99,7 +99,7 @@ UIkitSidebar <- function(..., id, overlay = TRUE, flip = TRUE) {
 #' 
 #' @param id Sidebar id to toggle (should be unique).
 #' 
-#' @author David Granjon, \email{dgranjon@@gmail.com}
+#' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export
 UIkitSidebarTrigger <- function(id) {

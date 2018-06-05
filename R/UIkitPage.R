@@ -1,4 +1,4 @@
-#' Create a UIkit page
+#' Create an UIkit page
 #'
 #' Build an UIkit Shiny app.
 #'
@@ -27,7 +27,7 @@
 #' )
 #' }
 #' 
-#' @author David Granjon, \email{dgranjon@@gmail.com}
+#' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export
 UIkitPage <- function(..., title = NULL, navbar = NULL, rtl = FALSE){

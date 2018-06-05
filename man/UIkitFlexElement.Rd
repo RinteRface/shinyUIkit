@@ -13,5 +13,5 @@ UIkitFlexElement(...)
 Element to insert in a flex layout.
 }
 \author{
-David Granjon, \email{dgranjon@gmail.com}
+David Granjon, \email{dgranjon@ymail.com}
 }

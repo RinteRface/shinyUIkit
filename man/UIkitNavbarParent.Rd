@@ -13,5 +13,5 @@ UIkitNavbarParent(parentName = NULL)
 To insert in a navigation bar. Can contain several subitems
 }
 \author{
-David Granjon, \email{dgranjon@gmail.com}
+David Granjon, \email{dgranjon@ymail.com}
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/UIkitCard.R
 \name{UIkitCardMedia}
 \alias{UIkitCardMedia}
-\title{Create a UIkit card}
+\title{Create an UIkit card media}
 \usage{
 UIkitCardMedia(src = NULL, position = "top", horizontal = FALSE)
 }
@@ -16,8 +16,8 @@ horizontal is TRUE, "left" or "right" are also available.}
 horizontal set to TRUE.}
 }
 \description{
-Build an UIkit card.
+Media to put inside a card
 }
 \author{
-David Granjon, \email{dgranjon@gmail.com}
+David Granjon, \email{dgranjon@ymail.com}
 }

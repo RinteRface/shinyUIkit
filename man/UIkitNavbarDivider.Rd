@@ -10,5 +10,5 @@ UIkitNavbarDivider()
 Perfect to insert in a navbar dropdown
 }
 \author{
-David Granjon, \email{dgranjon@gmail.com}
+David Granjon, \email{dgranjon@ymail.com}
 }

@@ -35,7 +35,7 @@
 #'  )
 #' }
 #' 
-#' @author David Granjon, \email{dgranjon@@gmail.com}
+#' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export
 UIkitDescriptionList <- function(..., divider = FALSE) {
@@ -59,7 +59,7 @@ UIkitDescriptionList <- function(..., divider = FALSE) {
 #' @param ... Item content.
 #' @param title Item title
 
-#' @author David Granjon, \email{dgranjon@@gmail.com}
+#' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export
 UIkitDescriptionListItem <- function(..., title) {

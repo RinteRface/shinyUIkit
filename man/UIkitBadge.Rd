@@ -2,7 +2,7 @@
 % Please edit documentation in R/UIkitBadge.R
 \name{UIkitBadge}
 \alias{UIkitBadge}
-\title{Create a UIkit badge}
+\title{Create an UIkit badge}
 \usage{
 UIkitBadge(content)
 }
@@ -27,5 +27,5 @@ shiny::shinyApp(
 
 }
 \author{
-David Granjon, \email{dgranjon@gmail.com}
+David Granjon, \email{dgranjon@ymail.com}
 }

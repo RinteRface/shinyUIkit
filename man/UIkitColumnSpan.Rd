@@ -2,7 +2,7 @@
 % Please edit documentation in R/UIkitColumns.R
 \name{UIkitColumnSpan}
 \alias{UIkitColumnSpan}
-\title{Create a UIkit special p tag}
+\title{Create an UIkit special p tag}
 \usage{
 UIkitColumnSpan(...)
 }
@@ -14,5 +14,5 @@ This p tag is designed for displayed inline element
 in a column layout
 }
 \author{
-David Granjon, \email{dgranjon@gmail.com}
+David Granjon, \email{dgranjon@ymail.com}
 }

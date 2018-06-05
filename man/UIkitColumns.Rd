@@ -2,7 +2,7 @@
 % Please edit documentation in R/UIkitColumns.R
 \name{UIkitColumns}
 \alias{UIkitColumns}
-\title{Create a UIkit column}
+\title{Create an UIkit column}
 \usage{
 UIkitColumns(..., n, divider = FALSE)
 }
@@ -62,5 +62,5 @@ shiny::shinyApp(
 
 }
 \author{
-David Granjon, \email{dgranjon@gmail.com}
+David Granjon, \email{dgranjon@ymail.com}
 }

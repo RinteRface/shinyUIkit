@@ -37,7 +37,7 @@
 #'  )
 #' }
 #' 
-#' @author David Granjon, \email{dgranjon@@gmail.com}
+#' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export
 UIkitSwitcher <- function(..., animation = NULL, mode = "switcher") {
@@ -87,7 +87,7 @@ UIkitSwitcherItem <- function(switcherItemName = NULL) {
 #' 
 #' @param ... Slot for  UIkitSwitcherContentItem.
 #'
-#' @author David Granjon, \email{dgranjon@@gmail.com}
+#' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export
 UIkitSwitcherContent <- function(...) {
@@ -106,7 +106,7 @@ UIkitSwitcherContent <- function(...) {
 #' 
 #' @param ... Any UI element. 
 #'
-#' @author David Granjon, \email{dgranjon@@gmail.com}
+#' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export
 UIkitSwitcherContentItem <- function(...) {

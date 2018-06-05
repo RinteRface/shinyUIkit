@@ -13,5 +13,5 @@ UIkitSidebarTrigger(id)
 A button to trigger the sidebar
 }
 \author{
-David Granjon, \email{dgranjon@gmail.com}
+David Granjon, \email{dgranjon@ymail.com}
 }

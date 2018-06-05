@@ -88,5 +88,5 @@ shiny::shinyApp(
 
 }
 \author{
-David Granjon, \email{dgranjon@gmail.com}
+David Granjon, \email{dgranjon@ymail.com}
 }

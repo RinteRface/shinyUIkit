@@ -66,7 +66,7 @@
 #'   )
 #' }
 #' 
-#' @author David Granjon, \email{dgranjon@@gmail.com}
+#' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export
 UIkitNavbar <- function(..., transparent = FALSE, mode = NULL) {
@@ -94,7 +94,7 @@ UIkitNavbar <- function(..., transparent = FALSE, mode = NULL) {
 #' and the sidebar itself.
 #' @param logo Sidebar logo.
 #'
-#' @author David Granjon, \email{dgranjon@@gmail.com}
+#' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export
 UIkitNavbarnav <- function(..., position = "left", sidebarTrigger = FALSE,
@@ -150,7 +150,7 @@ UIkitNavbarnav <- function(..., position = "left", sidebarTrigger = FALSE,
 #' 
 #' @param parentName nav item name.
 #' 
-#' @author David Granjon, \email{dgranjon@@gmail.com}
+#' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export
 UIkitNavbarParent <- function(parentName = NULL) {
@@ -170,7 +170,7 @@ UIkitNavbarParent <- function(parentName = NULL) {
 #' @param childName nav item name.
 #' @param active Whether the item is active or not. FALSE by default.
 #' 
-#' @author David Granjon, \email{dgranjon@@gmail.com}
+#' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export
 UIkitNavbarChild <- function(childName = NULL, active = FALSE) {
@@ -188,7 +188,7 @@ UIkitNavbarChild <- function(childName = NULL, active = FALSE) {
 #' 
 #' @param ... Any element (input, icon, ... logo).
 #' 
-#' @author David Granjon, \email{dgranjon@@gmail.com}
+#' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export
 UIkitNavbarItem <- function(...) {
@@ -207,7 +207,7 @@ UIkitNavbarItem <- function(...) {
 #' @param ... Any element (input, icon, ... logo), UIkitNavbarDivider, UIkitNavbarChild, UIkitNavbarParent.
 #' @param dropdownName Dropdown name.
 #' 
-#' @author David Granjon, \email{dgranjon@@gmail.com}
+#' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export
 UIkitNavbarDropdown <- function(..., dropdownName) {
@@ -234,7 +234,7 @@ UIkitNavbarDropdown <- function(..., dropdownName) {
 #'
 #' Perfect to insert in a navbar dropdown
 #' 
-#' @author David Granjon, \email{dgranjon@@gmail.com}
+#' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export
 UIkitNavbarDivider <- function() {
@@ -250,7 +250,7 @@ UIkitNavbarDivider <- function() {
 #' 
 #' @param headerName Header name.
 #' 
-#' @author David Granjon, \email{dgranjon@@gmail.com}
+#' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export
 UIkitNavbarHeader <- function(headerName = NULL) {

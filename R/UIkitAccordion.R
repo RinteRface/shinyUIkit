@@ -1,4 +1,4 @@
-#' Create a UIkit accordion
+#' Create an UIkit accordion
 #'
 #' Build an UIkit accordion which can contain UIkitAccordionItem.
 #'
@@ -44,7 +44,7 @@
 #'  )
 #' }
 #' 
-#' @author David Granjon, \email{dgranjon@@gmail.com}
+#' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export
 UIkitAccordion <- function(..., multiple = FALSE) {
@@ -59,7 +59,7 @@ UIkitAccordion <- function(..., multiple = FALSE) {
 
 
 
-#' Create a UIkit accordion item
+#' Create an UIkit accordion item
 #'
 #' Build an UIkit accordion item which can be embedded in an UIkitAccordion.
 #'
@@ -67,7 +67,7 @@ UIkitAccordion <- function(..., multiple = FALSE) {
 #' @param title Item title.
 #' @param opened Whether to start with the item opened. FALSE by default.
 #' 
-#' @author David Granjon, \email{dgranjon@@gmail.com}
+#' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export
 UIkitAccordionItem <- function(..., title = NULL, opened = FALSE) {

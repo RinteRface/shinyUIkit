@@ -85,7 +85,7 @@
 #'  )
 #' }
 #' 
-#' @author David Granjon, \email{dgranjon@@gmail.com}
+#' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export
 UIkitCard <- function(..., title = NULL, size = NULL, hover = "FALSE",
@@ -164,9 +164,9 @@ UIkitCard <- function(..., title = NULL, size = NULL, hover = "FALSE",
 }
 
 
-#' Create a UIkit card
+#' Create an UIkit card media
 #'
-#' Build an UIkit card.
+#' Media to put inside a card
 #'
 #' @param src Media url or path.
 #' @param position Media position: "top" or "bottom". "top" by default. If
@@ -174,7 +174,7 @@ UIkitCard <- function(..., title = NULL, size = NULL, hover = "FALSE",
 #' @param horizontal Media horizontal mode. Only works if the UIkitCard has
 #' horizontal set to TRUE.
 #'
-#' @author David Granjon, \email{dgranjon@@gmail.com}
+#' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export
 UIkitCardMedia <- function(src = NULL, position = "top",

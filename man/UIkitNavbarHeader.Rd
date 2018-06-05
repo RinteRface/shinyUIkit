@@ -13,5 +13,5 @@ UIkitNavbarHeader(headerName = NULL)
 Perfect to insert in a navbar dropdown to sort dropdown items
 }
 \author{
-David Granjon, \email{dgranjon@gmail.com}
+David Granjon, \email{dgranjon@ymail.com}
 }
