@@ -4,6 +4,7 @@
 #'
 #' @param ... any element.
 #' @param title App title.
+#' @param navbar Navbar content, if any.
 #' @param rtl Rigth to left support. FALSE by default.
 #'
 #' @examples
@@ -29,7 +30,7 @@
 #' @author David Granjon, \email{dgranjon@@gmail.com}
 #'
 #' @export
-UIkitPage <- function(..., title = NULL, rtl = FALSE){
+UIkitPage <- function(..., title = NULL, navbar = NULL, rtl = FALSE){
   
   shiny::tagList(
     # Head
@@ -49,6 +50,9 @@ UIkitPage <- function(..., title = NULL, rtl = FALSE){
       shiny::includeScript(system.file("js/uikit-icons.min.js", package = "shinyUIkit"))
     ),
     # Body 
+    if (!is.null(navbar)) {
+      navbar
+    },
     ...
   )
 }

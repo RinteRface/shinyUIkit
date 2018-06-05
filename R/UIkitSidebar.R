@@ -107,6 +107,7 @@ UIkitSidebarTrigger <- function(id) {
   stopifnot(!is.null(id))
   
   shiny::tags$button(
+    class = "uk-button uk-button-default uk-button-small",
     `uk-toggle` = paste0("target:", " #", id),
     type = "button",
     UIkitIcon(icon = "cog")

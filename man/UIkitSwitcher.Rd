@@ -27,12 +27,10 @@ shiny::shinyApp(
     animation = "fade",
     mode = "switcher",
     UIkitSwitcherItem(
-     switcherItemName = "tab1",
-     active = TRUE
+     switcherItemName = "tab1"
     ),
     UIkitSwitcherItem(
-     switcherItemName = "tab2",
-     disabled = TRUE
+     switcherItemName = "tab2"
     )
    ),
    

@@ -4,12 +4,14 @@
 \alias{UIkitPage}
 \title{Create a UIkit page}
 \usage{
-UIkitPage(..., title = NULL, rtl = FALSE)
+UIkitPage(..., title = NULL, navbar = NULL, rtl = FALSE)
 }
 \arguments{
 \item{...}{any element.}
 
 \item{title}{App title.}
+
+\item{navbar}{Navbar content, if any.}
 
 \item{rtl}{Rigth to left support. FALSE by default.}
 }
