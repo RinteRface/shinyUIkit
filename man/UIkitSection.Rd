@@ -8,7 +8,7 @@ UIkitSection(..., title = NULL, style = NULL, preserve = TRUE,
   size = NULL)
 }
 \arguments{
-\item{...}{Any UI element.}
+\item{...}{Slot for UIkitSectionItem.}
 
 \item{title}{Section title.}
 
@@ -34,26 +34,30 @@ if(interactive()){
       style = "primary",
       UIkitGrid(
        child_width = "expand",
-       UIkitCard(
-        width = NULL,
-        height = "medium",
-        title = "My card",
-        hover = TRUE,
-        horizontal = FALSE,
-        header = "This is the header",
-        body = "This is the body",
-        footer = "This is the footer"
-        ),
+       UIkitSectionItem(
         UIkitCard(
-        width = NULL,
-        height = "medium",
-        title = "My card",
-        hover = TRUE,
-        horizontal = FALSE,
-        header = "This is the header",
-        body = "This is the body",
-        footer = "This is the footer"
+         width = NULL,
+         height = "medium",
+         title = "My card",
+         hover = TRUE,
+         horizontal = FALSE,
+         header = "This is the header",
+         body = "This is the body",
+         footer = "This is the footer"
         )
+       ),
+       UIkitSectionItem(
+        UIkitCard(
+          width = NULL,
+          height = "medium",
+          title = "My card",
+          hover = TRUE,
+          horizontal = FALSE,
+          header = "This is the header",
+          body = "This is the body",
+          footer = "This is the footer"
+        )
+       )
       )
      )
    ),

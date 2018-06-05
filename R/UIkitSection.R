@@ -2,7 +2,7 @@
 #'
 #' Create horizontal layout sections with different background colors and styles
 #' 
-#' @param ... Any UI element.
+#' @param ... Slot for UIkitSectionItem.
 #' @param title Section title.
 #' @param style Section style: "default", "muted", "primary", "secondary".
 #' @param preserve Whether to preserve the color of UI elements inside the section.
@@ -21,26 +21,30 @@
 #'       style = "primary",
 #'       UIkitGrid(
 #'        child_width = "expand",
-#'        UIkitCard(
-#'         width = NULL,
-#'         height = "medium",
-#'         title = "My card",
-#'         hover = TRUE,
-#'         horizontal = FALSE,
-#'         header = "This is the header",
-#'         body = "This is the body",
-#'         footer = "This is the footer"
-#'         ),
+#'        UIkitSectionItem(
 #'         UIkitCard(
-#'         width = NULL,
-#'         height = "medium",
-#'         title = "My card",
-#'         hover = TRUE,
-#'         horizontal = FALSE,
-#'         header = "This is the header",
-#'         body = "This is the body",
-#'         footer = "This is the footer"
+#'          width = NULL,
+#'          height = "medium",
+#'          title = "My card",
+#'          hover = TRUE,
+#'          horizontal = FALSE,
+#'          header = "This is the header",
+#'          body = "This is the body",
+#'          footer = "This is the footer"
 #'         )
+#'        ),
+#'        UIkitSectionItem(
+#'         UIkitCard(
+#'           width = NULL,
+#'           height = "medium",
+#'           title = "My card",
+#'           hover = TRUE,
+#'           horizontal = FALSE,
+#'           header = "This is the header",
+#'           body = "This is the body",
+#'           footer = "This is the footer"
+#'         )
+#'        )
 #'       )
 #'      )
 #'    ),
@@ -67,3 +71,19 @@ UIkitSection <- function(..., title = NULL, style = NULL,
     )
   )
 } 
+
+
+
+
+#' Create an UIkit section item
+#'
+#' Wrap any UI element inside
+#' 
+#' @param ... Any UI element.
+#' 
+#' @author David Granjon, \email{dgranjon@@gmail.com}
+#'
+#' @export
+UIkitSectionItem <- function(...) {
+  shiny::tags$div(...)
+}
