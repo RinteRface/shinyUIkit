@@ -76,7 +76,7 @@ UIkitNavbar <- function(..., transparent = FALSE, mode = NULL) {
   
   shiny::tags$nav(
     class = navbarCl,
-    `uk-navbar` = if (!is.null(mode)) {if (mode == "click") "mode: click"} else NA,
+    `uk-navbar` = if (!is.null(mode)) paste0("mode:", mode) else NA,
     ...
   )
 }
