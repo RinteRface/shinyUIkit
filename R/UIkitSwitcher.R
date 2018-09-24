@@ -4,7 +4,7 @@
 #' 
 #' @param ... Slot for UIkitSwitcherItem.
 #' @param animation Apply animation to the switcher content. See \url{https://getuikit.com/docs/animation}.
-#' @param mode Switcher mode: either nav pills or tabs. "switcher" by default.
+#' @param mode Switcher mode: either nav pills or tabs. "switcher" or "tabs". "tabs" by default.
 #'
 #' @examples
 #' if(interactive()){
@@ -33,7 +33,9 @@
 #' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export
-UIkitSwitcher <- function(..., animation = NULL, mode = "switcher") {
+UIkitSwitcher <- function(..., animation = NULL, mode = "tabs") {
+  
+  if(is.null(mode)) stop("mode is either 'switcher' or 'tabs'!")
   
   items <- list(...)
   switcherTabs <- lapply(X = 1:length(items), FUN = function(i) {

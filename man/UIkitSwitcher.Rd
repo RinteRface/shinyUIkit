@@ -4,14 +4,14 @@
 \alias{UIkitSwitcher}
 \title{Create an UIkit switcher nav menu}
 \usage{
-UIkitSwitcher(..., animation = NULL, mode = "switcher")
+UIkitSwitcher(..., animation = NULL, mode = "tabs")
 }
 \arguments{
 \item{...}{Slot for UIkitSwitcherItem.}
 
 \item{animation}{Apply animation to the switcher content. See \url{https://getuikit.com/docs/animation}.}
 
-\item{mode}{Switcher mode: either nav pills or tabs. "switcher" by default.}
+\item{mode}{Switcher mode: either nav pills or tabs. "switcher" or "tabs". "tabs" by default.}
 }
 \description{
 Dynamically transition through different content panes
