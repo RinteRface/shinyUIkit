@@ -2,16 +2,18 @@
 % Please edit documentation in R/UIkitSwitcher.R
 \name{UIkitSwitcherItem}
 \alias{UIkitSwitcherItem}
-\title{Create an UIkit switcher nav item}
+\title{Create an UIkit switcher content item}
 \usage{
-UIkitSwitcherItem(switcherItemName = NULL)
+UIkitSwitcherItem(..., tabName)
 }
 \arguments{
-\item{switcherItemName}{Switcher item name.}
+\item{...}{Any UI element.}
+
+\item{tabName}{Switcher item name.}
 }
 \description{
 Item to insert in an UI kit tabset
 }
 \author{
-David Granjon, \email{dgranjon@gmail.com}
+David Granjon, \email{dgranjon@ymail.com}
 }

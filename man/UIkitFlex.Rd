@@ -4,7 +4,8 @@
 \alias{UIkitFlex}
 \title{Create an UIkit flex}
 \usage{
-UIkitFlex(..., horiz_align = NULL, vert_align = NULL, direction = "row")
+UIkitFlex(..., horiz_align = NULL, vert_align = NULL,
+  direction = "row")
 }
 \arguments{
 \item{...}{Slot for an UIkitFlexElement.}

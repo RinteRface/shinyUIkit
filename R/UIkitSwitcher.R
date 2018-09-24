@@ -17,19 +17,12 @@
 #'     animation = "fade",
 #'     mode = "switcher",
 #'     UIkitSwitcherItem(
-#'      switcherItemName = "tab1"
+#'      tabName = "tab1",
+#'      "Tab content 1"
 #'     ),
 #'     UIkitSwitcherItem(
-#'      switcherItemName = "tab2"
-#'     )
-#'    ),
-#'    
-#'    UIkitSwitcherContent(
-#'     UIkitSwitcherContentItem(
-#'      "Test"
-#'     ), 
-#'     UIkitSwitcherContentItem(
-#'      "blabla"
+#'      tabName = "tab2",
+#'      "Tab content 2"
 #'     )
 #'    )
 #'  ),
@@ -42,60 +35,41 @@
 #' @export
 UIkitSwitcher <- function(..., animation = NULL, mode = "switcher") {
   
-  if (mode == "switcher") {
-    shiny::tags$ul(
-      class = "uk-subnav uk-subnav-pill",
-      `uk-switcher` = if (!is.null(animation)) paste0("animation: ", " uk-animation-", animation) else NA,
-      ...
+  items <- list(...)
+  switcherTabs <- lapply(X = 1:length(items), FUN = function(i) {
+    current_item_name <- items[[i]]$name
+    shiny::tags$li(
+      shiny::tags$a(
+        href = "#",
+        current_item_name
+      )
     )
-  } else {
+  })
+  
+  shiny::tagList(
+    if (mode == "switcher") {
+      shiny::tags$ul(
+        class = "uk-subnav uk-subnav-pill",
+        `uk-switcher` = if (!is.null(animation)) {
+          paste0("animation: ", " uk-animation-", animation) 
+        }else {
+          NA
+        },
+        switcherTabs
+      )
+    } else {
+      shiny::tags$ul(
+        `uk-tab` = NA,
+        switcherTabs
+      )
+    },
     shiny::tags$ul(
-      class = "uk-subnav uk-subnav-pill",
-      `uk-tab` = if (!is.null(animation)) paste0("animation: ", " uk-animation-", animation) else NA,
-      ...
+      class = "uk-switcher uk-margin",
+      lapply(X = 1:length(items), function(i) items[[i]]$tag)
     )
-  }
+  )
  
 } 
-
-
-
-
-#' Create an UIkit switcher nav item
-#'
-#' Item to insert in an UI kit tabset
-#' 
-#' @param switcherItemName Switcher item name. 
-#'
-#' @author David Granjon, \email{dgranjon@@gmail.com}
-#'
-#' @export
-UIkitSwitcherItem <- function(switcherItemName = NULL) {
- shiny::tags$li(
-   shiny::tags$a(
-     href = "#",
-     switcherItemName
-   )
- )
-}
-
-
-
-#' Create an UIkit switcher content menu
-#'
-#' Item to insert in an UI kit tabset
-#' 
-#' @param ... Slot for  UIkitSwitcherContentItem.
-#'
-#' @author David Granjon, \email{dgranjon@@ymail.com}
-#'
-#' @export
-UIkitSwitcherContent <- function(...) {
- shiny::tags$ul(
-   class = "uk-switcher uk-margin",
-   ...
- )
-}
 
 
 
@@ -105,10 +79,11 @@ UIkitSwitcherContent <- function(...) {
 #' Item to insert in an UI kit tabset
 #' 
 #' @param ... Any UI element. 
+#' @param tabName Switcher item name.
 #'
 #' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export
-UIkitSwitcherContentItem <- function(...) {
-  shiny::tags$li(...)
+UIkitSwitcherItem <- function(..., tabName) {
+  return(list(name = tabName, tag = shiny::tags$li(...)))
 }

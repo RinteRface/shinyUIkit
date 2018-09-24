@@ -4,7 +4,8 @@
 \alias{UIkitTabItem}
 \title{Create an UIkit tab item}
 \usage{
-UIkitTabItem(..., tabItemName = NULL, active = FALSE, disabled = FALSE)
+UIkitTabItem(..., tabItemName = NULL, active = FALSE,
+  disabled = FALSE)
 }
 \arguments{
 \item{...}{Tab Item content.}

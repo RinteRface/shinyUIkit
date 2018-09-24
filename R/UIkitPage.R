@@ -10,6 +10,7 @@
 #' @examples
 #' if(interactive()){
 #' library(shiny)
+#' library(shinyUIkit)
 #' 
 #' shiny::shinyApp(
 #'   ui = UIkitPage(
@@ -41,6 +42,7 @@ UIkitPage <- function(..., title = NULL, navbar = NULL, rtl = FALSE){
         name = "viewport", 
         content = "width=device-width, initial-scale=1"
       ),
+      #bootstrapLib(),
       if (isTRUE(rtl)) {
         shiny::includeCSS(system.file("css/uikit.rtl.min.css", package = "shinyUIkit"))
       } else {
@@ -53,6 +55,7 @@ UIkitPage <- function(..., title = NULL, navbar = NULL, rtl = FALSE){
     if (!is.null(navbar)) {
       navbar
     },
-    ...
+    shiny::tags$br(),
+    UIkitContainer(...)
   )
 }

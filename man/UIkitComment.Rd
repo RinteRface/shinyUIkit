@@ -4,7 +4,8 @@
 \alias{UIkitComment}
 \title{Create an UIkit comment}
 \usage{
-UIkitComment(..., src = NULL, author = NULL, date = NULL, style = NULL)
+UIkitComment(..., src = NULL, author = NULL, date = NULL,
+  style = NULL)
 }
 \arguments{
 \item{...}{Comment element.}

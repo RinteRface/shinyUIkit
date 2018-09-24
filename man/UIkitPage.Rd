@@ -21,6 +21,7 @@ Build an UIkit Shiny app.
 \examples{
 if(interactive()){
 library(shiny)
+library(shinyUIkit)
 
 shiny::shinyApp(
   ui = UIkitPage(
