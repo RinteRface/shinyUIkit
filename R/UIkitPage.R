@@ -5,7 +5,6 @@
 #' @param ... any element.
 #' @param title App title.
 #' @param navbar Navbar content, if any.
-#' @param rtl Rigth to left support. FALSE by default.
 #'
 #' @examples
 #' if(interactive()){
@@ -31,7 +30,7 @@
 #' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export
-UIkitPage <- function(..., title = NULL, navbar = NULL, rtl = FALSE){
+UIkitPage <- function(..., title = NULL, navbar = NULL){
   
   shiny::tagList(
     # Head
@@ -41,22 +40,17 @@ UIkitPage <- function(..., title = NULL, navbar = NULL, rtl = FALSE){
       shiny::tags$meta(
         name = "viewport", 
         content = "width=device-width, initial-scale=1"
-      ),
-      #bootstrapLib(),
-      if (isTRUE(rtl)) {
-        shiny::includeCSS(system.file("css/uikit.rtl.min.css", package = "shinyUIkit"))
-      } else {
-        shiny::includeCSS(system.file("css/uikit.min.css", package = "shinyUIkit")) 
-      },
-      shiny::includeScript(system.file("js/uikit.min.js", package = "shinyUIkit")),
-      shiny::includeScript(system.file("js/uikit-icons.min.js", package = "shinyUIkit")),
-      shiny::includeScript(system.file("js/init.js", package = "shinyUIkit"))
+      )
     ),
     # Body 
-    if (!is.null(navbar)) {
-      navbar
-    },
-    shiny::tags$br(),
-    UIkitContainer(...)
+    addDeps(
+      tagList(
+        if (!is.null(navbar)) {
+          navbar
+        },
+        shiny::tags$br(),
+        UIkitContainer(...)  
+      )
+    )
   )
 }

@@ -4,7 +4,7 @@
 \alias{UIkitPage}
 \title{Create an UIkit page}
 \usage{
-UIkitPage(..., title = NULL, navbar = NULL, rtl = FALSE)
+UIkitPage(..., title = NULL, navbar = NULL)
 }
 \arguments{
 \item{...}{any element.}
@@ -12,8 +12,6 @@ UIkitPage(..., title = NULL, navbar = NULL, rtl = FALSE)
 \item{title}{App title.}
 
 \item{navbar}{Navbar content, if any.}
-
-\item{rtl}{Rigth to left support. FALSE by default.}
 }
 \description{
 Build an UIkit Shiny app.
