@@ -45,9 +45,7 @@ UIkitPage <- function(..., title = NULL, navbar = NULL){
     # Body 
     addDeps(
       tagList(
-        if (!is.null(navbar)) {
-          navbar
-        },
+        if (!is.null(navbar)) navbar,
         shiny::tags$br(),
         UIkitContainer(...)  
       )
