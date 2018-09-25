@@ -36,7 +36,7 @@
 #' @export
 UIkitContainer <- function(..., size = NULL) {
   shiny::tags$div(
-    class = paste0("uk-container", if (!is.null(size)) " uk-container-", size), 
+    class = paste0("uk-container", if (!is.null(size)) " uk-container-", size),
     ...
   )
 } 

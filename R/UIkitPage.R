@@ -49,7 +49,8 @@ UIkitPage <- function(..., title = NULL, navbar = NULL, rtl = FALSE){
         shiny::includeCSS(system.file("css/uikit.min.css", package = "shinyUIkit")) 
       },
       shiny::includeScript(system.file("js/uikit.min.js", package = "shinyUIkit")),
-      shiny::includeScript(system.file("js/uikit-icons.min.js", package = "shinyUIkit"))
+      shiny::includeScript(system.file("js/uikit-icons.min.js", package = "shinyUIkit")),
+      shiny::includeScript(system.file("js/init.js", package = "shinyUIkit"))
     ),
     # Body 
     if (!is.null(navbar)) {

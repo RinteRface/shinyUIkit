@@ -4,7 +4,7 @@
 #' 
 #' @param ... Slot for UIkitSwitcherItem.
 #' @param animation Apply animation to the switcher content. See \url{https://getuikit.com/docs/animation}.
-#' @param mode Switcher mode: either nav pills or tabs. "switcher" or "tabs". "tabs" by default.
+#' @param mode Switcher mode: "switcher" or "tabs". "tabs" by default.
 #'
 #' @examples
 #' if(interactive()){

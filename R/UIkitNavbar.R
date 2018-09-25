@@ -2,7 +2,7 @@
 #'
 #' Create a navigation bar that can be used for your main site navigation
 #' 
-#' @param ... Slot for UIkitNavbarnav.
+#' @param ... Slot for UIkitNavMenu.
 #' @param transparent Navbar transparency. FALSE by default.
 #' @param mode Way to trigger navbar elements: NULL by default (on hover) but also "click".
 #'
@@ -10,84 +10,66 @@
 #' if(interactive()){
 #' library(shiny)
 #' shiny::shinyApp(
-#'   ui = UIkitPage(
-#'     title = "My UIkit application",
-#'     navbar = UIkitNavbar(
-#'       UIkitNavbarnav(
-#'         sidebarTrigger = TRUE, 
-#'         sidebarId = "mysidebar",
-#'         position = "center",
-#'         UIkitNavbarParent(
-#'           parentName = "Parent"
-#'         ),
-#'         UIkitNavbarChild(
-#'           childName = "Child",
-#'           active = TRUE
-#'         ),
-#'         UIkitNavbarDropdown(
-#'           dropdownName = "Dropdown",
-#'           UIkitNavbarHeader("Group 1"),
-#'           UIkitNavbarChild(
-#'             childName = "item 1"
-#'           ),
-#'           UIkitNavbarChild(
-#'             childName = "item 2"
-#'           ),
-#'           UIkitNavbarDivider(),
-#'           UIkitNavbarHeader("Group 2"),
-#'           UIkitNavbarChild(
-#'             childName = "item 3"
-#'           ),
-#'           UIkitNavbarChild(
-#'             childName = "item 4"
-#'           )
-#'         )
-#'       )
-#'     ),
-#'     UIkitSidebarLayout(
-#'       sidebarPanel = UIkitSidebar(
-#'         id = "mysidebar",
-#'         tagList(
-#'           h3("Test Sidebar"),
-#'           "Lorem ipsum dolor sit amet, consectetur adipiscing 
-#'           elit, sed do eiusmod tempor incididunt ut labore et 
-#'           dolore magna aliqua. Ut enim ad minim veniam, quis 
-#'           nostrud exercitation ullamco laboris nisi ut aliquip 
-#'           ex ea commodo consequat.",
-#'           sliderInput("obs", "Number of observations:",
-#'                       min = 0, max = 1000, value = 500
-#'           ),
-#'           radioButtons(
+#'  ui = UIkitPage(
+#'    title = "My UIkit application",
+#'    navbar = UIkitNavbar(
+#'      UIkitNavMenu(
+#'        sidebarTrigger = TRUE, 
+#'        sidebarId = "mysidebar",
+#'        position = "center",
+#'        UIkitNavItems(
+#'          id = "container",
+#'          #mode = "tabs",
+#'          UIkitNavItem(tabName = "item1"),
+#'          UIkitNavItem(tabName = "item2")
+#'        )
+#'      )
+#'    ),
+#'    UIkitSidebarLayout(
+#'      sidebarPanel = UIkitSidebar(
+#'        id = "mysidebar",
+#'        tagList(
+#'          h3("Test Sidebar"),
+#'          "Lorem ipsum dolor sit amet, consectetur adipiscing 
+#'          elit, sed do eiusmod tempor incididunt ut labore et 
+#'          dolore magna aliqua. Ut enim ad minim veniam, quis 
+#'          nostrud exercitation ullamco laboris nisi ut aliquip 
+#'          ex ea commodo consequat.",
+#'          sliderInput("obs", "Number of observations:",
+#'                      min = 0, max = 1000, value = 500
+#'          ),
+#'          radioButtons(
 #'            "dist", 
 #'            "Distribution type:",
 #'            c("Normal" = "norm",
 #'              "Uniform" = "unif",
 #'              "Log-normal" = "lnorm",
 #'              "Exponential" = "exp"
-#'             )
 #'            )
-#'         )
-#'     ),
-#'     mainPanel = UIkitContainer(
+#'          )
+#'        )
+#'    ),
+#'    mainPanel = UIkitTabItems(
+#'      id = "container",
 #'      plotOutput("distPlot"),
 #'      plotOutput("plot")
-#'     )
-#'   )
-#'   ),
-#'   server = function(input, output) {
+#'    )
+#'  )
+#'  ),
+#'  server = function(input, output) {
 #'    output$distPlot <- renderPlot({
-#'     hist(rnorm(input$obs))
+#'      hist(rnorm(input$obs))
 #'    })
 #'    output$plot <- renderPlot({
-#'     dist <- switch(
-#'      input$dist,
-#'      norm = rnorm,
-#'      unif = runif,
-#'      lnorm = rlnorm,
-#'      exp = rexp,
-#'      rnorm
-#'     )
-#'     hist(dist(500))
+#'      dist <- switch(
+#'        input$dist,
+#'        norm = rnorm,
+#'        unif = runif,
+#'        lnorm = rlnorm,
+#'        exp = rexp,
+#'        rnorm
+#'      )
+#'      hist(dist(500))
 #'    })
 #'   }
 #'  )
@@ -124,8 +106,8 @@ UIkitNavbar <- function(..., transparent = FALSE, mode = NULL) {
 #' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export
-UIkitNavbarnav <- function(..., position = "left", sidebarTrigger = FALSE,
-                           sidebarId = NULL, logo = "home") {
+UIkitNavMenu <- function(..., position = "left", sidebarTrigger = FALSE,
+                         sidebarId = NULL, logo = "home") {
   
   shiny::tagList(
     shiny::tags$div(
@@ -140,21 +122,21 @@ UIkitNavbarnav <- function(..., position = "left", sidebarTrigger = FALSE,
         )
       ),
       
-      shiny::tags$ul(
-        class = "uk-navbar-nav",
-        `uk-tab` = "connect: #component-nav",
+      #shiny::tags$ul(
+      #  class = "uk-navbar-nav",
+        #`uk-tab` = "connect: #component-nav",
         # content
         ...
-      )
+      #)
     ),
-
+    
     # sidebar trigger item if any
     if (isTRUE(sidebarTrigger)) {
       shiny::tags$div(
         class = paste0("uk-navbar-right"),
         shiny::tags$ul(
           class = "uk-navbar-nav",
-          UIkitNavbarItem(
+          UIkitNavElem(
             shiny::tags$a(
               class = "uk-navbar-item uk-logo",
               href = paste0("#", sidebarId), 
@@ -169,46 +151,6 @@ UIkitNavbarnav <- function(..., position = "left", sidebarTrigger = FALSE,
 }
 
 
-
-
-#' Create an UIkit navigation bar parent element
-#'
-#' To insert in a navigation bar. Can contain several subitems
-#' 
-#' @param parentName nav item name.
-#' 
-#' @author David Granjon, \email{dgranjon@@ymail.com}
-#'
-#' @export
-UIkitNavbarParent <- function(parentName = NULL) {
-  shiny::tags$li(
-    class = "uk-parent",
-    shiny::tags$a(href = "#", parentName)
-  )
-}
-
-
-
-
-#' Create an UIkit navigation bar child element
-#'
-#' To insert in a navigation bar
-#' 
-#' @param childName nav item name.
-#' @param active Whether the item is active or not. FALSE by default.
-#' 
-#' @author David Granjon, \email{dgranjon@@ymail.com}
-#'
-#' @export
-UIkitNavbarChild <- function(childName = NULL, active = FALSE) {
-  shiny::tags$li(
-    class = if (isTRUE(active)) "uk-active" else NULL,
-    shiny::tags$a(href = "#", childName)
-  )
-}
-
-
-
 #' Create an UIkit navigation bar item
 #'
 #' To insert in any item in a navigation bar
@@ -217,8 +159,7 @@ UIkitNavbarChild <- function(childName = NULL, active = FALSE) {
 #' 
 #' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
-#' @export
-UIkitNavbarItem <- function(...) {
+UIkitNavElem <- function(...) {
   shiny::tags$div(
     class = "uk-navbar-item",
     ...
@@ -227,32 +168,118 @@ UIkitNavbarItem <- function(...) {
 
 
 
-#' Create an UIkit dropdown menu for a navbar
+
+#' Create an UIkit navigation bar tabSet
 #'
-#' To insert in a navigation bar
+#' To insert in a navigation bar.
 #' 
-#' @param ... Any element (input, icon, ... logo), UIkitNavbarDivider, UIkitNavbarChild, UIkitNavbarParent.
-#' @param dropdownName Dropdown name.
+#' @param ... slot for UIkitNavItem.
+#' @param id unique id.
+#' @param animation Apply animation to the switcher content. See \url{https://getuikit.com/docs/animation}.
+#' @param mode NavItems mode: "switcher" or "tabs". "tabs" by default.
 #' 
 #' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export
-UIkitNavbarDropdown <- function(..., dropdownName) {
-  shiny::tags$li(
-    shiny::tags$a(
-      href = "#", 
-      shiny::tags$span(`uk-icon` = "icon:  triangle-down"),
-      dropdownName
-    ),
-    shiny::tags$div(
-      class = "uk-navbar-dropdown",
-      shiny::tags$ul(
-        class = "uk-nav uk-navbar-dropdown-nav",
-        ...
+UIkitNavItems <- function(..., id, animation = NULL, mode = "switcher") {
+  
+  if(is.null(mode)) stop("mode is either 'switcher' or 'tabs'!")
+  
+  uk_switcherAttr <- paste0("connect: #", id)
+  if (!is.null(animation)) {
+    uk_switcherAttr <- paste0(uk_switcherAttr ," animation: ", " uk-animation-", animation) 
+  }
+  
+  # create the tab menu
+  items <- list(...)
+  switcherTabs <- lapply(X = 1:length(items), FUN = function(i) {
+    current_item_name <- items[[i]]$name
+    shiny::tags$li(
+      shiny::tags$a(
+        href = "#",
+        current_item_name
       )
     )
-  )
+  })
+  
+  if (mode == "switcher") {
+    shiny::tags$ul(
+      class = "uk-subnav uk-subnav-pill",
+      `uk-switcher` = uk_switcherAttr,
+      switcherTabs
+    )
+  } else {
+    shiny::tags$ul(
+      `uk-tab` = uk_switcherAttr,
+      switcherTabs
+    )
+  }
 }
+
+
+
+#' Create an UIkit navigation bar item
+#'
+#' Item to insert in an UIkitNavItems
+#' 
+#' @param ... Any UI element. 
+#' @param tabName Switcher item name.
+#'
+#' @author David Granjon, \email{dgranjon@@ymail.com}
+#'
+#' @export
+UIkitNavItem <- function(tabName) {
+  return(list(name = tabName))
+}
+
+
+# #' Create an UIkit navigation bar child element
+# #'
+# #' To insert in a navigation bar
+# #' 
+# #' @param childName nav item name.
+# #' @param active Whether the item is active or not. FALSE by default.
+# #' 
+# #' @author David Granjon, \email{dgranjon@@ymail.com}
+# #'
+# #' @export
+# UIkitNavbarChild <- function(childName = NULL, active = FALSE) {
+#   shiny::tags$li(
+#     class = if (isTRUE(active)) "uk-active" else NULL,
+#     shiny::tags$a(href = "#", childName)
+#   )
+# }
+# 
+# 
+# 
+# 
+# 
+# #' Create an UIkit dropdown menu for a navbar
+# #'
+# #' To insert in a navigation bar
+# #' 
+# #' @param ... Any element (input, icon, ... logo), UIkitNavbarDivider, UIkitNavbarChild, UIkitNavbarParent.
+# #' @param dropdownName Dropdown name.
+# #' 
+# #' @author David Granjon, \email{dgranjon@@ymail.com}
+# #'
+# #' @export
+# UIkitNavbarDropdown <- function(..., dropdownName) {
+#   shiny::tags$li(
+#     shiny::tags$a(
+#       href = "#", 
+#       shiny::tags$span(`uk-icon` = "icon:  triangle-down"),
+#       dropdownName
+#     ),
+#     shiny::tags$div(
+#       class = "uk-navbar-dropdown",
+#       shiny::tags$ul(
+#         class = "uk-nav uk-navbar-dropdown-nav",
+#         ...
+#       )
+#     )
+#   )
+# }
 
 
 
