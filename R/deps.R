@@ -18,7 +18,7 @@ addDeps <- function(x) {
   uikit_css <- "uikit.min.css"
   
   dashboardDeps <- list(
-    # bootstrap deps
+    # uikit deps
     htmltools::htmlDependency(
       name = "uikit", 
       version = "3.0.0",

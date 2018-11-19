@@ -3,8 +3,9 @@ Type: Package
 Title: 'shiny' API for the 'UIkit' Web Framework
 Version: 0.1.0
 Authors@R: c(
-    person("David", "Granjon", email = "david.granjon@uzh.ch", role = c("aut", "cre"),
-            comment = "jQuery Knob shiny interface & sliders appearance"))
+    person("David", "Granjon", email = "david.granjon@uzh.ch", role = c("aut", "cre")),
+    person(family = "RinteRface", role = "cph")
+    )
 Maintainer: David Granjon <dgranjon@ymail.com>
 Description: This package is a shiny interface to the UIkit web framework.
 URL: https://github.com/DivadNojnarg/shinyUIkit 
@@ -13,4 +14,4 @@ License: GPL-2
 Imports: htmltools, shiny
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.1.0
+RoxygenNote: 6.1.1
