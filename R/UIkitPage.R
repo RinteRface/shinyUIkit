@@ -40,11 +40,15 @@ UIkitPage <- function(..., title = NULL, navbar = NULL){
       shiny::tags$meta(
         name = "viewport", 
         content = "width=device-width, initial-scale=1"
-      )
+      ),
+      # we need bootstrap.min.js to display tab content
+      # otherwise shiny will keep output hidden
+      # need to trigger show event
+      shiny::bootstrapLib()
     ),
     # Body 
     addDeps(
-      tagList(
+      shiny::tagList(
         if (!is.null(navbar)) navbar,
         shiny::tags$br(),
         UIkitContainer(...)  

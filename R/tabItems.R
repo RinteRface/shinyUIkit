@@ -15,7 +15,7 @@ UIkitTabItems <- function(..., id) {
     class = "uk-switcher uk-margin",
     lapply(1:length(items), function(i) {
       shiny::tags$li(
-        onclick = paste0("UIkit.switcher('#", id, "').show(", i - 1, ");"),
+        class = "tab-pane",
         items[[i]]
       )
     })

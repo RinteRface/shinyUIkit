@@ -42,7 +42,8 @@ UIkitSwitcher <- function(..., animation = NULL, mode = "tabs") {
     current_item_name <- items[[i]]$name
     shiny::tags$li(
       shiny::tags$a(
-        href = "#",
+        href = paste0("#", current_item_name),
+        `data-toggle` = "tab",
         current_item_name
       )
     )
@@ -87,5 +88,5 @@ UIkitSwitcher <- function(..., animation = NULL, mode = "tabs") {
 #'
 #' @export
 UIkitSwitcherItem <- function(..., tabName) {
-  return(list(name = tabName, tag = shiny::tags$li(...)))
+  return(list(name = tabName, tag = shiny::tags$li(..., id = tabName, class = "tab-pane")))
 }

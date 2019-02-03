@@ -16,6 +16,7 @@ addDeps <- function(x) {
   uikit_js <- "uikit.min.js"
   uikit_icons_js <- "uikit-icons.min.js"
   uikit_css <- "uikit.min.css"
+  custom_js <- "custom.js"
   
   dashboardDeps <- list(
     # uikit deps
@@ -23,7 +24,7 @@ addDeps <- function(x) {
       name = "uikit", 
       version = "3.0.3",
       src = c(file = system.file("uikit-3.0.3", package = "shinyUIkit")),
-      script = c(uikit_js, uikit_icons_js),
+      script = c(uikit_js, uikit_icons_js, custom_js),
       stylesheet = uikit_css
     )
   )

@@ -4,10 +4,10 @@ Title: 'shiny' API for the 'UIkit' Web Framework
 Version: 0.1.0
 Authors@R: c(
     person("David", "Granjon", email = "david.granjon@uzh.ch", role = c("aut", "cre")),
-    person(family = "RinteRface", role = "cph")
-    )
+    person(family = "RinteRface", role = "cph"))
 Maintainer: David Granjon <dgranjon@ymail.com>
-Description: This package is a shiny interface to the UIkit web framework.
+Description: This package is a shiny interface to the UIkit web framework. 
+        See the original framework here <https://getuikit.com>.
 URL: https://github.com/DivadNojnarg/shinyUIkit 
 BugReports: https://github.com/DivadNojnarg/shinyUIkit/issues
 License: GPL-2

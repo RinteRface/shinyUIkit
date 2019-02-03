@@ -196,7 +196,8 @@ UIkitNavItems <- function(..., id, animation = NULL, mode = "switcher") {
     current_item_name <- items[[i]]$name
     shiny::tags$li(
       shiny::tags$a(
-        href = "#",
+        href = paste0("#", current_item_name),
+        `data-toggle` = "tab",
         current_item_name
       )
     )
