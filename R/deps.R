@@ -22,8 +22,8 @@ addDeps <- function(x) {
     # uikit deps
     htmltools::htmlDependency(
       name = "uikit", 
-      version = "3.0.3",
-      src = c(file = system.file("uikit-3.0.3", package = "shinyUIkit")),
+      version = "3.1.5",
+      src = c(file = system.file("uikit-3.1.5", package = "shinyUIkit")),
       script = c(uikit_js, uikit_icons_js, custom_js),
       stylesheet = uikit_css
     )

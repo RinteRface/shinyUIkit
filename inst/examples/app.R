@@ -51,10 +51,10 @@ shiny::shinyApp(
         checkboxGroupInput(
           "variable", 
           "Variables to show:",
-                           c("Cylinders" = "cyl",
-                             "Transmission" = "am",
-                             "Gears" = "gear")
-          ),
+          c("Cylinders" = "cyl",
+            "Transmission" = "am",
+            "Gears" = "gear")
+        ),
         tableOutput("data")
       ),
       UIkitSwitcherItem(
