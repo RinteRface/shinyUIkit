@@ -43,7 +43,7 @@ shiny::shinyApp(
       hover = TRUE,
       horizontal = FALSE,
       UIkitCardMedia(
-        src = "http://wallpics4k.com/wp-content/uploads/2014/07/470318.jpg",
+        src = "https://getuikit.com/docs/images/light.jpg",
         horizontal = TRUE, 
         position = "left"
       ),
@@ -58,7 +58,7 @@ shiny::shinyApp(
       hover = TRUE,
       horizontal = FALSE,
       UIkitCardMedia(
-        src = "http://wallpics4k.com/wp-content/uploads/2014/07/470318.jpg",
+        src = "https://getuikit.com/docs/images/light.jpg",
         horizontal = TRUE, 
         position = "left"
       ),
@@ -73,7 +73,7 @@ shiny::shinyApp(
       hover = TRUE,
       horizontal = FALSE,
       UIkitCardMedia(
-        src = "http://wallpics4k.com/wp-content/uploads/2014/07/470318.jpg",
+        src = "https://getuikit.com/docs/images/light.jpg",
         horizontal = TRUE, 
         position = "left"
       ),
