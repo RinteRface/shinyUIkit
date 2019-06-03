@@ -1,0 +1,12 @@
+name: UIkitDemo
+title: UIkitDemo
+username:
+account: dgranjon
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 963190
+bundleId: 2127588
+url: https://dgranjon.shinyapps.io/UIkitDemo/
+when: 1559584197.52804
+asMultiple: FALSE
+asStatic: FALSE
