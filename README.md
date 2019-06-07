@@ -1,11 +1,10 @@
-# shinyUIkit
+# shinyUIkit <img src="man/figures/UIkit_hex.svg" width=200 align="right" />
 
 [![CRAN status](https://www.r-pkg.org/badges/version/shinyUIkit)](https://cran.r-project.org/package=shinyUIkit)
 [![Travis build status](https://travis-ci.org/RinteRface/shinyUIkit.svg?branch=master)](https://travis-ci.org/RinteRface/shinyUIkit)
 
 > [UIkit](https://getuikit.com) API for shiny 
 
-[![uikit banner](https://cloud.githubusercontent.com/assets/321047/21769911/474d7d9e-d681-11e6-9fe0-d95f8ccfd3a9.jpg)](http://getuikit.com/)
 
 # Example
 
